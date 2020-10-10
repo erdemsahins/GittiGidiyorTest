@@ -5,6 +5,9 @@ import static org.junit.Assert.assertEquals;
 
 public class BaseTestKeyword extends BaseTestAssert{
 
+    String AlertTextXpath = "//*[@class='gg-icon gg-icon-close icon-close btn-alert-close']";
+
+
     public void girisYap(String kullaniciAdi, String sifre){
         String LoginBtnXpath = "//*[@data-cy='header-login-button']";
 

@@ -2,33 +2,46 @@ import org.junit.Test;
 
 public class GittiGidiyorGirisTest extends BaseTestKeyword{
 
+    String email = "test@mail.com";
+    String pass = "123456";
+
+    String ad = "Erdem";
+    String soyad = "Şahin";
+    String gsm = "5554443322";
+    String telefon = "2161112233";
+    String adresBaslik = "İst Ev";
+    String sehir = "İstanbul";
+    String ilce = "Tuzla";
+    String mahalle = "Orta mah.";
+    String adres = "adresim";
+    String postaKodu = "34956";
+
+    String search = "Bilgisayar";
+
 
     @Test
     public void girisTest(){
-        girisYap("erdemsahins@hotmail.com", "erdem1998");
-        urunAra("Samsung");
-
+        girisYap(email,pass);
+        urunAra(search);
     }
 
     @Test
     public void uyelikTest(){
 
-        kayitOl("Melih", "Sakarya", "melihasd@gmail.com", "123456", "5334444444");
-        girisYap("erdemsahins@hotmail.com", "erdem1998");
-        urunAra("Samsung");
+        kayitOl(ad, soyad, email, pass, gsm);
+        girisYap(email, pass);
+        urunAra(search);
     }
 
     @Test
     public void adresEklemeTest(){
-        girisYap("erdemsahins@hotmail.com", "erdem1998");
-        adresEkleme("erdem1998","İstanbul Ev","Erdem","Şahin",
-                "İstanbul","Tuzla","Orta mah.", "34957",
-                "Ortam mah. Demokrasi Cad. No:142 Daire:6","5395926468","2163040004");
+        girisYap(email,pass);
+        adresEkleme(pass,adresBaslik,ad,soyad,sehir,ilce,mahalle,postaKodu,adres,gsm,telefon);
     }
 
     @Test
     public void urunAramaVeSepeteEklemeTest(){
-        urunAra("Bilgisayar");
+        urunAra(search);
         RandomSepeteEkleme();
     }
 
